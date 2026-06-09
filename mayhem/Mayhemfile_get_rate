@@ -1,0 +1,11 @@
+project: savantenvs/iproute2
+target: get-rate
+
+# no local seeds shipped for this target; server-tar-only directive avoids inheriting the
+# upstream repo's own root-level testsuite/ (its own test suite, unrelated to Mayhem)
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+
+cmds:
+  - cmd: /mayhem/fuzz_get_rate
+    libfuzzer: true

@@ -1,0 +1,10 @@
+project: savantenvs/iproute2
+target: ip
+
+# mayhem-lint: keep-testsuite
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/ip/testsuite
+
+cmds:
+  - cmd: /mayhem/ip_bin -force -batch @@
